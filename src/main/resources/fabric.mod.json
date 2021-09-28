@@ -1,29 +1,31 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "dont-run-with-scissors",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Don't Run With Scissors",
+  "description": "Don't do it, you fool.",
   "authors": [
-    "Me!"
+    "Sindarin"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Sindarin27/dont_run_with_scissors_fabric"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "GPL-3.0",
+  "icon": "assets/dont-run-with-scissors/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "sindarin.dontrunwithscissors.DontRunWithScissors"
+    ],
+    "client": [
+      "sindarin.dontrunwithscissors.DontRunWithScissorsClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "dont-run-with-scissors.mixins.json"
   ],
 
   "depends": {
@@ -31,8 +33,5 @@
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

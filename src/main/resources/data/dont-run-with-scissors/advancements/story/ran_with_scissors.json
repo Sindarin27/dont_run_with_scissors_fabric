@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:story/smelt_iron",
+  "display": {
+    "icon": {
+      "item": "minecraft:shears"
+    },
+    "title": {
+      "translate": "advancements.story.ran_with_scissors.title"
+    },
+    "description": {
+      "translate": "advancements.story.ran_with_scissors.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "ran_with_scissors": {
+      "trigger": "dont-run-with-scissors:ran_with_scissors"
+    }
+  },
+  "requirements": [
+    [
+      "ran_with_scissors"
+    ]
+  ]
+}
