@@ -1,7 +1,7 @@
 {
   "advancements.story.ran_with_scissors.title": "Don't Run With Scissors",
   "advancements.story.ran_with_scissors.description": "Has your mom taught you nothing?",
-  "text.autoconfig.dont-run-with-scissors.option.runningDamage": "Running with a shear causes damage:",
+  "text.autoconfig.dont-run-with-scissors.option.runningDamage": "Whether running with a shear causes damage:",
   "text.autoconfig.dont-run-with-scissors.option.damageAmount": "Amount of damage: ",
   "text.autoconfig.dont-run-with-scissors.title": "Don't Run With Scissors!"
 }
