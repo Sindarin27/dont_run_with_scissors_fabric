@@ -3,7 +3,8 @@ package sindarin.dontrunwithscissors.mixin;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShearsItem;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -16,6 +17,11 @@ public class ShearsItemExtensions {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (!world.isClient && selected && entity.isSprinting()) {
             entity.setSprinting(false);
+
+
+            if (DontRunWithScissors.config.runningDamage) {
+                entity.damage(DamageSource.sting((LivingEntity) entity), DontRunWithScissors.config.damageAmount);
+            }
 
             if (entity instanceof ServerPlayerEntity player) {
                 // Grant advancement

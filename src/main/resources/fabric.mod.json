@@ -22,6 +22,9 @@
     ],
     "client": [
       "sindarin.dontrunwithscissors.DontRunWithScissorsClient"
+    ],
+    "modmenu": [
+      "sindarin.dontrunwithscissors.ModMenuIntegration"
     ]
   },
   "mixins": [
