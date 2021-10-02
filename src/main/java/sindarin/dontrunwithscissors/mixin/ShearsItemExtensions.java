@@ -7,13 +7,22 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShearsItem;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.*;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.Inject;
 import sindarin.dontrunwithscissors.DontRunWithScissors;
 
 @Mixin(ShearsItem.class)
-public class ShearsItemExtensions {
+public abstract class ShearsItemExtensions extends Item {
+
+    public ShearsItemExtensions(Settings settings) {
+        super(settings);
+    }
+
+    @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (!world.isClient && selected && entity.isSprinting()) {
             entity.setSprinting(false);
