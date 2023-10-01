@@ -4,15 +4,12 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShearsItem;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.Inject;
 import sindarin.dontrunwithscissors.DontRunWithScissors;
 
 @Mixin(ShearsItem.class)
@@ -29,7 +26,7 @@ public abstract class ShearsItemExtensions extends Item {
 
 
             if (DontRunWithScissors.config.runningDamage) {
-                entity.damage(DamageSource.sting((LivingEntity) entity), DontRunWithScissors.config.damageAmount);
+                entity.damage(world.getDamageSources().sting((LivingEntity) entity), DontRunWithScissors.config.damageAmount);
             }
 
             if (entity instanceof ServerPlayerEntity player) {
