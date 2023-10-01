@@ -12,7 +12,7 @@ public class DontRunWithScissorsClient implements ClientModInitializer {
                 client.player.setSprinting(false);
                 // Holding the sprint key forces its way through the client without informing the server
                 // Don't be cheaty like that.
-                client.options.keySprint.setPressed(false);
+                client.options.sprintKey.setPressed(false);
 
             }
         });
